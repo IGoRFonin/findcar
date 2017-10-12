@@ -4,12 +4,17 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/App/app';
 import store from './store';
+import {
+    BrowserRouter as Router
+} from 'react-router-dom'
 
 ReactDOM.render(
     <AppContainer>
-        <Provider store={store}>
-            <App />
-        </Provider>
+        <Router>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </Router>
     </AppContainer>,
     document.getElementById('root') as HTMLElement
 );
@@ -20,8 +25,8 @@ interface RequireImport {
 
 if (module.hot) {
     module.hot.accept('./components/App/app', () => {
-        console.log('doing a app hot accept')
-        const NextApp = require<RequireImport>('./components/App/app').default
+        console.log('doing a app hot accept');
+        const NextApp = require<RequireImport>('./components/App/app').default;
         ReactDOM.render(
             <AppContainer>
                 <NextApp />
