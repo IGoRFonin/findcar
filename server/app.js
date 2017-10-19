@@ -69,7 +69,8 @@ app.use((req, res, next) => {
 // After allllll that above middleware, we finally handle our own routes!
 
 app.use('/api', routes);
-app.use('*', (req, res) => {
+app.use('/', (req, res) => {
+    console.log(123);
     res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 

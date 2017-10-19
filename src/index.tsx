@@ -7,6 +7,8 @@ import store from './store';
 import {
     BrowserRouter as Router
 } from 'react-router-dom'
+import './style.css';
+
 
 ReactDOM.render(
     <AppContainer>

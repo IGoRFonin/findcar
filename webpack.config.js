@@ -39,9 +39,13 @@ module.exports = {
 	],
 	devServer: {
 		hot: true,
+        historyApiFallback: true,
         proxy: [{
             path: '/api',
             target: 'http://localhost:8090/'
+        },{
+            path: '/img',
+            target: 'http://localhost:8090'
         }],
 		//Enable this if you want to never refresh (this allows hot-reloading app.tsx, but won't auto-refresh if you change index.tsx)
 		//hotOnly: true
